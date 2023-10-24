@@ -17,7 +17,7 @@ const Company = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className='flex justify-between max-w-screen-lg mx-auto -my-10 gap-5'>
+      <div className='flex px-2 justify-between max-w-screen-lg mx-auto -my-10 gap-5'>
         <CompanyCard title='Experience' tagLine='25 year of activity'>
           <Experience />
         </CompanyCard>
