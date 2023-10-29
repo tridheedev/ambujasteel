@@ -1,10 +1,12 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero/Hero';
 import Base from '@/template/Base';
-import Company from '@/components/Company/Company';
 import Image from 'next/image';
 import Product from '@/components/Products/Product';
 import ContactUs from '@/components/ContactUs/Home/ContactUs';
+import Footer from '@/components/footer/Footer';
+import Company from '@/components/Company/Company';
+
 const Index = () => {
   return (
     <div className='h-screen overflow-scroll bg-gray-100'>
@@ -25,6 +27,7 @@ const Index = () => {
       <Company />
 
       <ContactUs />
+      <Footer />
     </div>
   );
 };
