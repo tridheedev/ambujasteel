@@ -6,6 +6,7 @@ import Product from '@/components/Products/Product';
 import ContactUs from '@/components/ContactUs/Home/ContactUs';
 import Footer from '@/components/footer/Footer';
 import Company from '@/components/Company/Company';
+import Certificate from '@/components/certificate/Certificate';
 
 const Index = () => {
   return (
@@ -22,10 +23,9 @@ const Index = () => {
           <Hero />
         </div>
       </div>
-      {/* <Product /> */}
       <Product />
       <Company />
-
+      <Certificate />
       <ContactUs />
       <Footer />
     </div>

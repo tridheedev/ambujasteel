@@ -5,9 +5,16 @@ type Props = {};
 
 const ContactUs = (props: Props) => {
   return (
-    <div className='h-80 bg-slate-300 flex justify-between items-center '>
+    <div className='h-80 bg-gray-100 flex justify-between items-center max-w-screen-xl mx-auto'>
       <div className='w-1/2 relative h-full '>
-        <Image src='/images/c.jpg' fill alt='as' className='object-cover' />
+        as
+        <Image
+          src='/images/berring.png'
+          height={100}
+          width={300}
+          alt='as'
+          className='object-cover'
+        />
       </div>
       <div className='w-1/2 text-2xl font-bold text-white flex justify-center'>
         <div>
