@@ -41,3 +41,8 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.bg-gradient{
+  background: linear-gradient(0deg, #8fa2db 0%, #e67817 100%)
+  
+  }

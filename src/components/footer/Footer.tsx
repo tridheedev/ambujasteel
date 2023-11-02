@@ -6,7 +6,7 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <div className='max-w-screen-xl mx-auto px-2 py-10'>
+    <div className='max-w-screen-xl mx-auto px-2 py-10 '>
       <div className='flex justify-between'>
         <div className='relative h-10 w-10'>
           <Image src={'/images/logo.png'} alt='ts' fill />
