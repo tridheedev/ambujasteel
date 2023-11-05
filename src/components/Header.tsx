@@ -17,7 +17,10 @@ const Header = (props: Props) => {
           <div className='cursor-pointer'>
             <Link href='/aboutus'>About us</Link>
           </div>
-          <div className='cursor-pointer'>Products</div>
+          <div className='cursor-pointer'>
+            {' '}
+            <Link href='/products'>Products</Link>{' '}
+          </div>
           <div className='cursor-pointer'>Certifications</div>
           <div className='cursor-pointer'>
             <Link href='/contact'>Contact</Link>
