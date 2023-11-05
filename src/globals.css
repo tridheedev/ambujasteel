@@ -27,9 +27,23 @@
 .app-bg-color{
   @apply bg-[#e67817]
 }
+.app-bg-secondary{
+   @apply bg-amber-950
+}
+.app-text-secondary{
+   @apply text-amber-950
+}
 
 .app-text-color{
   @apply text-[#e67817]
+}
+
+.app-text-input{
+ @apply py-2 px-2 outline-none bg-gray-100 border-b-2 
+}
+
+.app-radial{
+  background: radial-gradient(transparent 0%, #e67817 75%, #e67817 80%, #e67817 100%);
 }
 
 body {

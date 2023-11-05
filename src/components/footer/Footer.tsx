@@ -24,15 +24,15 @@ const products = [
 ];
 const Footer = (props: Props) => {
   return (
-    <div className='max-w-screen-xl mx-auto px-2 py-10 '>
-      <div className='flex '>
-        <div className='w-1/3'>
+    <div className='max-w-screen-xl mx-auto px-2 py-10  '>
+      <div className='flex  flex-col lg:flex-row'>
+        <div className='md:w-1/3'>
           <Brand />
         </div>
-        <div className='flex justify-evenly w-full  '>
+        <div className='flex justify-evenly w-full md:flex-row flex-col '>
           <FooterNav title={'COMPANY'} links={company} />
           <FooterNav title={'PRODUCTS'} links={products} />
-          <div className='w-1/4'>
+          <div className='md:w-1/4'>
             <div>
               <h5 className='app-text-color uppercase'>Contact Info</h5>
             </div>
