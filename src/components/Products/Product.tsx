@@ -14,17 +14,11 @@ const Product = (props: Props) => {
           title='Materials'
           url='/images/products/product-steel.png'
         />
-        <ProductCard title='Pipes' url='/images/products/product-steel.png' />
-        <ProductCard title='Flanges' url='/images/products/product-steel.png' />
-        <ProductCard
-          title='Fittings'
-          url='/images/products/product-steel.png'
-        />
-        <ProductCard title='Valves' url='/images/products/product-steel.png' />
-        <ProductCard
-          title='Round Bars'
-          url='/images/products/product-steel.png'
-        />
+        <ProductCard title='Pipes' url='/images/range/pipes.png' />
+        <ProductCard title='Flanges' url='/images/range/flanges.png' />
+        <ProductCard title='Fittings' url='/images/range/fittings.png' />
+        <ProductCard title='Valves' url='/images/range/valves.png' />
+        <ProductCard title='Round Bars' url='/images/range/steelimages.png' />
       </div>
     </div>
   );
