@@ -46,16 +46,10 @@
   background: radial-gradient(transparent 0%, #e67817 75%, #e67817 80%, #e67817 100%);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+.cut45{
+  clip-path: polygon(0 100px,100px 0,100% 0,100% 100%,0 100%);
 
+}
 .bg-gradient{
   background: rgb(150,75,0);
   background: linear-gradient(90deg, rgba(150,75,0,1) 1%, rgba(230,120,23,1) 67%);

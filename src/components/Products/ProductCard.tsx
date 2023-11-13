@@ -15,7 +15,7 @@ const ProductCard = (props: Props) => {
       </div>
       <div className='pt-8 px-7 w-1/2 '>
         <div className='text-2xl text-gray-800'>{props.title}</div>
-        <div className='text-gray-500 text-xs flex items-center mx-1'>
+        <div className='text-gray-500 text-xs flex items-center mx-1 app-text-color'>
           View <ArrowRight />
         </div>
       </div>

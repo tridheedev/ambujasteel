@@ -9,7 +9,9 @@ const Header = (props: Props) => {
   return (
     <>
       <div className='flex max-w-screen-xl mx-auto justify-between py-3'>
-        <div className='px-3 relative'>Ambuja steel</div>
+        <div className='px-3 relative uppercase font-bold tracking-wider drop-shadow-lg'>
+          Ambuja steel
+        </div>
         <div className='space-x-3 uppercase text-white px-8 hidden md:flex'>
           <div className='cursor-pointer'>
             <Link href='/'>home</Link>
