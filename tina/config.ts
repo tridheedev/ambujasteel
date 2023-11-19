@@ -31,7 +31,6 @@ export default defineConfig({
     collections: [
       {
         format: 'mdx',
-
         name: 'post',
         label: 'Posts',
         path: 'content/posts',
@@ -49,7 +48,27 @@ export default defineConfig({
             label: 'Body',
             isBody: true,
           },
+          { type: 'image', name: 'productImage', label: 'productImage' },
+          {
+            type: 'Specification list',
+            name: 'productSpecification',
+            type: 'object',
+            list: true,
+            fields: [
+              {
+                label: 'specificationName',
+                name: 'specificationName',
+                type: 'string',
+              },
+              {
+                label: 'specificationValue',
+                name: 'specificationValue',
+                type: 'string',
+              },
+            ],
+          },
         ],
+
         ui: {
           // This is an DEMO router. You can remove this to fit your site
           router: ({ document }) => `/products/${document._sys.filename}`,
