@@ -12,7 +12,7 @@ const Header = (props: Props) => {
         <div className='px-3 relative uppercase font-bold tracking-wider drop-shadow-lg'>
           Ambuja steel
         </div>
-        <div className='space-x-3 uppercase text-white px-8 hidden md:flex'>
+        <div className='space-x-3 uppercase  px-8 hidden md:flex'>
           <div className='cursor-pointer'>
             <Link href='/'>home</Link>
           </div>
@@ -23,7 +23,7 @@ const Header = (props: Props) => {
             {' '}
             <Link href='/products'>Products</Link>{' '}
           </div>
-          <div className='cursor-pointer'>Certifications</div>
+          <div className='cursor-pointer text-inherit'>Certifications</div>
           <div className='cursor-pointer'>
             <Link href='/contact'>Contact</Link>
           </div>

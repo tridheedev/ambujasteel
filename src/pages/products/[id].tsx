@@ -11,12 +11,21 @@ const Product = (props: Props) => {
   console.log(props, 'props');
   return <div>{JSON.stringify(props)}</div>;
 };
-export async function getStaticProps<any>({ params, preview = false }) {
+export async function getStaticProps({ params, preview = false }) {
   console.log(params, 'params1');
-  const pageResponse = await client.queries.post({ relativePath: params.id });
+  let pageResponse = {};
+  try {
+    pageResponse = await client.queries.post({ relativePath: params.id });
+    console.log(pageResponse, 'response');
+  } catch (error) {
+    console.log(error);
+  }
+
   return {
     props: {
-      product: pageResponse,
+      data: pageResponse.data,
+      query: pageResponse.query,
+      variables: pageResponse.variables,
     },
     // If webhooks isn't setup then attempt to re-generate in 1 minute intervals
   };
@@ -26,7 +35,7 @@ export async function getStaticPaths() {
   const postListResponse = await client.queries.postConnection();
   return {
     paths: postListResponse.data.postConnection.edges?.map((edge) => {
-      console.log(edge?.node?._sys.basename);
+      console.log(edge?.node?._sys.basename, 'NEW');
       return { params: { id: edge?.node?._sys.basename } };
     }),
     fallback: true,
