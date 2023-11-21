@@ -5,6 +5,7 @@ const branch =
   process.env.GITHUB_BRANCH ||
   process.env.VERCEL_GIT_COMMIT_REF ||
   process.env.HEAD ||
+  process.env.NEXT_PUBLIC_TINA_BRANCH ||
   'master';
 
 export default defineConfig({
@@ -13,7 +14,7 @@ export default defineConfig({
   // Get this from tina.io
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
   // Get this from tina.io
-  token: process.env.TINA_TOKEN,
+  token: process.env.NEXT_PUBLIC_TINA_CLIENT_SECRET,
 
   build: {
     outputFolder: 'admin',
@@ -29,34 +30,6 @@ export default defineConfig({
   // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
   schema: {
     collections: [
-      {
-        format: 'mdx',
-        name: 'post',
-        label: 'Posts',
-        path: 'content/posts',
-        fields: [
-          {
-            type: 'string',
-            name: 'title',
-            label: 'Title',
-            isTitle: true,
-            required: true,
-          },
-          {
-            type: 'rich-text',
-            name: 'body',
-            label: 'Body',
-            isBody: true,
-          },
-
-          { type: 'image', name: 'productImage', label: 'productImage' },
-        ],
-
-        ui: {
-          // This is an DEMO router. You can remove this to fit your site
-          router: ({ document }) => `/products/${document._sys.filename}`,
-        },
-      },
       {
         label: 'Products',
         name: 'product',

@@ -7,10 +7,7 @@ import ProductBox from '@/components/products/ProductBox';
 import Image from 'next/image';
 import React from 'react';
 import client from '../../../tina/__generated__/client';
-import {
-  PostConnection,
-  ProductConnection,
-} from '../../../tina/__generated__/types';
+import { ProductConnection } from '../../../tina/__generated__/types';
 import Link from 'next/link';
 
 type Props = {
