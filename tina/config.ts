@@ -5,7 +5,7 @@ const branch =
   process.env.GITHUB_BRANCH ||
   process.env.VERCEL_GIT_COMMIT_REF ||
   process.env.HEAD ||
-  'main';
+  'master';
 
 export default defineConfig({
   branch,
@@ -48,26 +48,8 @@ export default defineConfig({
             label: 'Body',
             isBody: true,
           },
-          { type: 'image', name: 'productImage', label: 'productImage' },
-          {
-            type: 'Specification list',
-            name: 'productSpecification',
-            type: 'object',
 
-            list: true,
-            fields: [
-              {
-                label: 'specificationName',
-                name: 'specificationName',
-                type: 'string',
-              },
-              {
-                label: 'specificationValue',
-                name: 'specificationValue',
-                type: 'string',
-              },
-            ],
-          },
+          { type: 'image', name: 'productImage', label: 'productImage' },
         ],
 
         ui: {
@@ -129,10 +111,24 @@ export default defineConfig({
               },
             ],
           },
+
           {
             type: 'rich-text',
-            label: 'product Description',
-            name: 'productDescription',
+            label: 'product Details',
+            name: 'productDetails',
+          },
+          {
+            type: 'string',
+            label: 'product type',
+            name: 'type',
+            options: [
+              'material',
+              'pipes',
+              'flanges',
+              'filter',
+              'valves',
+              'bars',
+            ],
           },
           {
             label: 'Product Specification',
@@ -197,6 +193,14 @@ export default defineConfig({
               component: 'tags',
             },
           },
+          // products
+
+          {
+            type: 'string',
+            name: 'star',
+            label: 'Start',
+          },
+          // options
         ],
       },
     ],

@@ -1,25 +1,23 @@
 import React from 'react';
-import { useTina } from 'tinacms/dist/react';
 import client from '../../../tina/__generated__/client';
-import { useRouter } from 'next/router';
 
 type Props = {};
 
 const Product = (props: Props) => {
-  console.log(props);
   // const da = useTina({ query: id, });
-  console.log(props, 'props');
   return <div>{JSON.stringify(props)}</div>;
 };
-export async function getStaticProps({ params, preview = false }) {
-  console.log(params, 'params1');
-  let pageResponse = {};
+export async function getStaticProps({
+  params,
+  preview = false,
+}: {
+  params: { id: string };
+  preview: boolean;
+}) {
+  let pageResponse: any = {};
   try {
     pageResponse = await client.queries.post({ relativePath: params.id });
-    console.log(pageResponse, 'response');
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 
   return {
     props: {
@@ -35,7 +33,6 @@ export async function getStaticPaths() {
   const postListResponse = await client.queries.postConnection();
   return {
     paths: postListResponse.data.postConnection.edges?.map((edge) => {
-      console.log(edge?.node?._sys.basename, 'NEW');
       return { params: { id: edge?.node?._sys.basename } };
     }),
     fallback: true,

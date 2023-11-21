@@ -3,7 +3,7 @@ import React from 'react';
 type Props = {};
 
 const RichTextView = (props: Props) => {
-  return <div>{JSON.stringify(props)}</div>;
+  return <div>{'as'}</div>;
 };
 
 export default RichTextView;

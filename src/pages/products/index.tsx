@@ -7,10 +7,14 @@ import ProductBox from '@/components/products/ProductBox';
 import Image from 'next/image';
 import React from 'react';
 import client from '../../../tina/__generated__/client';
-import { PostConnection } from '../../../tina/__generated__/types';
+import {
+  PostConnection,
+  ProductConnection,
+} from '../../../tina/__generated__/types';
+import Link from 'next/link';
 
 type Props = {
-  products: PostConnection;
+  products: ProductConnection;
 };
 
 const index = ({ products }: Props) => {
@@ -28,7 +32,6 @@ const index = ({ products }: Props) => {
           <Hero />
         </div>
       </div>
-
       <div
         className='mx-auto container px-4 md:px-6 2xl:px-0 py-12 
     flex justify-center items-center
@@ -41,8 +44,21 @@ const index = ({ products }: Props) => {
           <div className='flex mt-10 lg:mt-12 '>
             <div className='grid grid-cols-1 lg:grid-cols-4 gap-x-8 gap-y-10 lg:gap-y-0'>
               {products.edges?.map((product) => {
-                console.log(product);
-                return <ProductBox key={product?.cursor} />;
+                return (
+                  <Link
+                    href={`/p/${product?.node?._sys.filename}`}
+                    key={product?.cursor}
+                  >
+                    <ProductBox
+                      title={product?.node?.title}
+                      image={
+                        (product?.node?.gallery &&
+                          product?.node.gallery[0]?.image) ||
+                        ''
+                      }
+                    />
+                  </Link>
+                );
               })}
             </div>
           </div>
@@ -54,11 +70,11 @@ const index = ({ products }: Props) => {
 };
 
 export const getStaticProps = async () => {
-  const postListResponse = await client.queries.postConnection();
+  const postListResponse = await client.queries.productConnection();
 
   return {
     props: {
-      products: postListResponse.data.postConnection,
+      products: postListResponse.data.productConnection,
     },
   };
 };

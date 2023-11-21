@@ -35,7 +35,7 @@ type Props = {
 const ProductImage = ({ images }: Props) => {
   const [selected, setSelected] = useState(images[0]);
   return (
-    <div className='w-1/2 border px-2 py-2'>
+    <div className='md:w-1/2 border px-2 py-2'>
       <div className='bg-gray-600 h-96 rounded-sm shadow-lg relative'>
         <Image
           src={selected?.image}

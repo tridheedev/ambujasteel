@@ -1,11 +1,17 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
+import { Maybe, ProductGallery } from '../../../tina/__generated__/types';
 
-function ProductBox() {
+type Props = {
+  title?: Maybe<string> | undefined;
+  image: Maybe<string> | undefined;
+};
+function ProductBox({ title, image }: Props) {
   return (
     <div className='flex flex-col py-6'>
       <div className='relative'>
-        <img src='/images/heroimage.png' alt='shoes' />
-        <button
+        <img src={image || ''} alt='shoes' />
+        {/* <button
           aria-label='close'
           className='top-4 right-4 focus:outline-none focus:ring-2 focus:ring-offset-2 dark:bg-white dark:text-gray-800 focus:ring-gray-800 absolute p-1.5 bg-gray-800 text-white hover:text-gray-400'
         >
@@ -32,15 +38,15 @@ function ProductBox() {
               stroke-linejoin='round'
             />
           </svg>
-        </button>
+        </button> */}
       </div>
-      <div className='mt-6 flex justify-between items-center'>
+      <div className='mt-4 flex justify-between items-center'>
         <div className='flex justify-center items-center'>
-          <p className='tracking-tight text-2xl font-semibold leading-6 text-gray-800 dark:text-white'>
-            Az Steel
+          <p className='tracking-tight text-sm font-medium leading-6 text-gray-800 dark:text-white'>
+            {title}
           </p>
         </div>
-        <div className='flex justify-center items-center'>
+        {/* <div className='flex justify-center items-center'>
           <button
             aria-label='show menu'
             className='focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 py-2.5 px-2 bg-gray-800 text-white hover:text-gray-400 dark:bg-gray-50 dark:text-gray-900 hover:bg-gray-200'
@@ -80,7 +86,7 @@ function ProductBox() {
               />
             </svg>
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
