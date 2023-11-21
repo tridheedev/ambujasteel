@@ -11,34 +11,6 @@ function ProductBox({ title, image }: Props) {
     <div className='flex flex-col py-6'>
       <div className='relative'>
         <img src={image || ''} alt='shoes' />
-        {/* <button
-          aria-label='close'
-          className='top-4 right-4 focus:outline-none focus:ring-2 focus:ring-offset-2 dark:bg-white dark:text-gray-800 focus:ring-gray-800 absolute p-1.5 bg-gray-800 text-white hover:text-gray-400'
-        >
-          <svg
-            className='fil-current'
-            width='14'
-            height='14'
-            viewBox='0 0 14 14'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <path
-              d='M13 1L1 13'
-              stroke='currentColor'
-              stroke-width='1.25'
-              stroke-linecap='round'
-              stroke-linejoin='round'
-            />
-            <path
-              d='M1 1L13 13'
-              stroke='currentColor'
-              stroke-width='1.25'
-              stroke-linecap='round'
-              stroke-linejoin='round'
-            />
-          </svg>
-        </button> */}
       </div>
       <div className='mt-4 flex justify-between items-center'>
         <div className='flex justify-center items-center'>
