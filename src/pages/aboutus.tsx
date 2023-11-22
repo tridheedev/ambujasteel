@@ -18,7 +18,6 @@ const AboutUs = (props: Props) => {
           className='object-cover bg-cover opacity-80 bg-black backdrop-brightness-90 '
         />
         <div className='z-10  absolute w-screen text-white'>
-          <Header />
           <Hero />
         </div>
         <div className='absolute w-1/2  bg-white  right-0 -bottom-1  h-14 cut45 '></div>

@@ -25,7 +25,7 @@ const index = ({ products }: Props) => {
           className='object-cover bg-cover opacity-80 bg-black backdrop-brightness-90 '
         />
         <div className='z-10  absolute w-screen text-white'>
-          <Header />
+          {/* <Header /> */}
           <Hero />
         </div>
       </div>

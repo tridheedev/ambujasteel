@@ -10,7 +10,6 @@ const contact = (props: Props) => {
   return (
     <div className='h-screen app-bg-color relative'>
       <div>
-        <Header />
         <div className='md:absolute md:transform md:-translate-x-1/2 md:-translate-y-1/2  md:top-2/3 md:left-1/2 md:z-30'>
           <ContactUsMain />
         </div>

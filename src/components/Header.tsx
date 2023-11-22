@@ -8,11 +8,11 @@ const Header = (props: Props) => {
   const [showMenu, setMenu] = useState(false);
   return (
     <>
-      <div className='flex max-w-screen-xl mx-auto justify-between py-3'>
+      <div className='flex max-w-screen-xl mx-auto justify-between py-3 '>
         <div className='px-3 relative uppercase font-bold tracking-wider drop-shadow-lg'>
           <Link href='/'>Ambuja steel</Link>
         </div>
-        <div className='space-x-3 uppercase  px-8 hidden md:flex'>
+        <div className='space-x-3 uppercase   px-8 hidden md:flex'>
           <div className='cursor-pointer'>
             <Link href='/'>home</Link>
           </div>

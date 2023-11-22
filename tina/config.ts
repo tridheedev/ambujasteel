@@ -1,5 +1,5 @@
-import { defineConfig, wrapFieldsWithMeta } from 'tinacms';
-
+import { defineConfig, defineSchema, wrapFieldsWithMeta } from 'tinacms';
+import { mainSlider } from './slider';
 // Your hosting provider likely exposes this as an environment variable
 const branch =
   process.env.GITHUB_BRANCH ||
@@ -176,6 +176,7 @@ export default defineConfig({
           // options
         ],
       },
+      { ...mainSlider },
     ],
   },
 });

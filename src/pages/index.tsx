@@ -7,29 +7,77 @@ import ContactUs from '@/components/ContactUs/Home/ContactUs';
 import Footer from '@/components/footer/Footer';
 import Company from '@/components/Company/Company';
 import Certificate from '@/components/certificate/Certificate';
+import client from '../../tina/__generated__/client';
+import { useTina } from 'tinacms/dist/react';
+import {
+  Exact,
+  MainSliderConnectionQuery,
+  MainSliderQuery,
+} from '../../tina/__generated__/types';
+import Slider from '@/components/Slider/Slider';
+import Industry from '@/components/Industry/Industry';
 
-const Index = () => {
+type Props = {
+  data: MainSliderQuery;
+
+  variables: Exact<{
+    relativePath: string;
+  }>;
+  query: string;
+};
+const Index = (props: Props) => {
+  useTina({ data: props.data, query: props.query, variables: props.variables });
   return (
-    <div className='h-screen overflow-scroll bg-gray-100'>
-      <div className='  h-4/6 bg-black overflow-hidden relative '>
-        <Image
-          src={'/images/heroimage.png'}
-          fill
-          alt='images'
-          className='object-cover bg-cover opacity-80 bg-black backdrop-brightness-90 '
-        />
-        <div className='z-10  absolute w-screen text-white'>
-          <Header />
-          <Hero />
-        </div>
+    <>
+      <div className='   overflow-hidden relative '>
+        {props.data && props.data && (
+          <Slider images={props.data.mainSlider.gallery} />
+        )}
       </div>
       <Product />
       <Company />
       <Certificate />
+      <Industry />
       <ContactUs />
       <Footer />
-    </div>
+    </>
   );
 };
+
+export async function getStaticProps() {
+  try {
+    const s = await client.queries.mainSlider({
+      relativePath: 'index/index.mdx',
+    });
+    console.log(s.query);
+    return {
+      props: {
+        data: s.data,
+        variables: s.variables,
+        query: s.query,
+      },
+    };
+  } catch (error) {
+    console.error(error);
+  }
+
+  // console.log(document, 'do');
+  return {
+    props: {
+      data: {},
+      variables: { relativePath: 'index/index.mdx' },
+      query: '',
+    },
+  };
+}
+
+// export async function getStaticPaths() {
+//   const productList = await client.queries.mainSliderConnection();
+//   console.log(productList);
+//   return {
+//     paths: [],
+//     fallback: true,
+//   };
+// }
 
 export default Index;
