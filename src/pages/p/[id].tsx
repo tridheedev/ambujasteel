@@ -121,7 +121,7 @@ export async function getStaticProps({
   let pageResponse = {};
   try {
     pageResponse = await client.queries.product({
-      relativePath: `${params.id}`,
+      relativePath: `${params.id}.mdx`,
     });
   } catch (error) {
     console.error(error);

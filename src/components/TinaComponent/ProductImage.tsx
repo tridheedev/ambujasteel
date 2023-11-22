@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export interface ProductImage {
   __typename: string;
@@ -33,15 +33,23 @@ type Props = {
 };
 
 const ProductImage = ({ images }: Props) => {
-  const [selected, setSelected] = useState(images[0]);
+  const [selected, setSelected] = useState<{
+    image: string;
+    title: string;
+  } | null>(null);
+  useEffect(() => {
+    if (images && images.length) {
+      setSelected(images[0]);
+    }
+  }, [images]);
   return (
     <div className='md:w-1/2 border px-2 py-2'>
       <div className='bg-gray-600 h-96 rounded-sm shadow-lg relative'>
         <Image
-          src={selected?.image}
+          src={selected?.image || ''}
           layout='fill'
           className='object-cover'
-          alt={selected.titel}
+          alt={selected?.title || ''}
         />
       </div>
       <div className='relative  flex h-20 w-36 my-2 gap-x-2'>
