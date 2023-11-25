@@ -17,6 +17,7 @@ export const mainSlider: Collection = {
           return { label: item?.title };
         },
       },
+
       fields: [
         {
           label: 'Title',
@@ -29,6 +30,8 @@ export const mainSlider: Collection = {
         { label: 'Image', name: 'image', type: 'image', required: true },
       ],
     },
+
+    { label: 'Industry tagline', name: 'tag', type: 'string' },
 
     {
       label: 'Industry',

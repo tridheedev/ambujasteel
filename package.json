@@ -14,6 +14,7 @@
     "next-seo": "^6.1.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-multi-carousel": "^2.8.4",
     "tinacms": "^1.5.24"
   },
   "devDependencies": {

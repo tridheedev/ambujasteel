@@ -26,18 +26,25 @@ type Props = {
   query: string;
 };
 const Index = (props: Props) => {
-  useTina({ data: props.data, query: props.query, variables: props.variables });
+  const { data } = useTina({
+    data: props.data,
+    query: props.query,
+    variables: props.variables,
+  });
   return (
     <>
       <div className='   overflow-hidden relative '>
         {props.data && props.data && (
-          <Slider images={props.data.mainSlider.gallery} />
+          <Slider images={data.mainSlider.gallery} />
         )}
       </div>
       <Product />
       <Company />
       <Certificate />
-      <Industry />
+      <Industry
+        tag={data.mainSlider.tag}
+        industries={data.mainSlider.industryUse}
+      />
       <ContactUs />
       <Footer />
     </>
