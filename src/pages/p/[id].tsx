@@ -49,7 +49,9 @@ const Product = ({ data, query, variables }: Props) => {
             type={a.data.product.type}
           />
           <div className='flex justify-between flex-col md:flex-row  '>
-            <ProductImage images={a.data.product.gallery} />
+            {a.data.product.gallery?.length && (
+              <ProductImage images={a.data.product.gallery} />
+            )}
             <ProductCard
               title={a.data.product.title}
               star={a.data.product.star}

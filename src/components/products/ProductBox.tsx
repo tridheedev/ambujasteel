@@ -9,8 +9,12 @@ type Props = {
 function ProductBox({ title, image }: Props) {
   return (
     <div className='flex flex-col py-6'>
-      <div className='relative'>
-        <img src={image || ''} alt='shoes' />
+      <div className='relative h-40'>
+        <img
+          src={image || ''}
+          alt='shoes'
+          className='h-full object-cover w-full'
+        />
       </div>
       <div className='mt-4 flex justify-between items-center'>
         <div className='flex justify-center items-center'>

@@ -37,11 +37,15 @@ const ProductImage = ({ images }: Props) => {
     image: string;
     title: string;
   } | null>(null);
+
   useEffect(() => {
     if (images && images.length) {
       setSelected(images[0]);
     }
   }, [images]);
+  if (images && !images.length) {
+    return <div>Loading....</div>;
+  }
   return (
     <div className='md:w-1/2 border px-2 py-2'>
       <div className='bg-gray-600 h-96 rounded-sm shadow-lg relative'>
@@ -61,7 +65,7 @@ const ProductImage = ({ images }: Props) => {
             return (
               <Image
                 key={i}
-                src={`${image.image}`}
+                src={`${image.image}` || ''}
                 // layout='fill'
                 height={80}
                 width={150}

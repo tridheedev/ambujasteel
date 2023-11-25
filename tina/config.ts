@@ -75,7 +75,7 @@ export default defineConfig({
                 name: 'title',
                 type: 'string',
               },
-              { label: 'Image', name: 'image', type: 'image' },
+              { label: 'Image', name: 'image', type: 'image', required: true },
               {
                 label: 'Size',
                 name: 'size',
